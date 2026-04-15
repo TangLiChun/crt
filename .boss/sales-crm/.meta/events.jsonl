@@ -1,0 +1,17 @@
+{"id":1,"type":"PipelineInitialized","timestamp":"2026-04-15T07:54:13Z","data":{"initialState":{"schemaVersion":"0.2.0","feature":"sales-crm","createdAt":"2026-04-15T07:54:13Z","updatedAt":"2026-04-15T07:54:13Z","status":"initialized","parameters":{"skipUI":false,"skipDeploy":false,"quick":false,"hitlLevel":"auto","roles":"full"},"stages":{"1":{"name":"planning","status":"pending","startTime":null,"endTime":null,"retryCount":0,"maxRetries":2,"failureReason":null,"artifacts":[],"gateResults":{}},"2":{"name":"review","status":"pending","startTime":null,"endTime":null,"retryCount":0,"maxRetries":2,"failureReason":null,"artifacts":[],"gateResults":{}},"3":{"name":"development","status":"pending","startTime":null,"endTime":null,"retryCount":0,"maxRetries":2,"failureReason":null,"artifacts":[],"gateResults":{}},"4":{"name":"deployment","status":"pending","startTime":null,"endTime":null,"retryCount":0,"maxRetries":2,"failureReason":null,"artifacts":[],"gateResults":{}}},"qualityGates":{"gate0":{"status":"pending","passed":null,"checks":[],"executedAt":null},"gate1":{"status":"pending","passed":null,"checks":[],"executedAt":null},"gate2":{"status":"pending","passed":null,"checks":[],"executedAt":null}},"metrics":{"totalDuration":null,"stageTimings":{},"gatePassRate":null,"retryTotal":0},"plugins":[],"humanInterventions":[],"revisionRequests":[],"feedbackLoops":{"maxRounds":2,"currentRound":0}}}}
+{"id":2,"type":"StageStarted","timestamp":"2026-04-15T07:59:23Z","data":{"stage":1}}
+{"id":3,"type":"StageStarted","timestamp":"2026-04-15T08:02:31Z","data":{"stage":2}}
+{"id":3,"type":"StageCompleted","timestamp":"2026-04-15T08:02:31Z","data":{"stage":1}}
+{"id":5,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:02:31Z","data":{"stage":1,"artifact":"prd.md"}}
+{"id":6,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:02:31Z","data":{"stage":1,"artifact":"architecture.md"}}
+{"id":7,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:02:31Z","data":{"stage":1,"artifact":"ui-spec.md"}}
+{"id":8,"type":"StageCompleted","timestamp":"2026-04-15T08:05:30Z","data":{"stage":2}}
+{"id":9,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:05:30Z","data":{"stage":2,"artifact":"tech-review.md"}}
+{"id":10,"type":"StageStarted","timestamp":"2026-04-15T08:05:30Z","data":{"stage":3}}
+{"id":10,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:05:30Z","data":{"stage":2,"artifact":"tasks.md"}}
+{"id":12,"type":"StageCompleted","timestamp":"2026-04-15T08:35:39Z","data":{"stage":3}}
+{"id":13,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:35:39Z","data":{"stage":3,"artifact":"code"}}
+{"id":14,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:35:39Z","data":{"stage":3,"artifact":"qa-report.md"}}
+{"id":14,"type":"StageStarted","timestamp":"2026-04-15T08:35:39Z","data":{"stage":4}}
+{"id":16,"type":"StageCompleted","timestamp":"2026-04-15T08:35:50Z","data":{"stage":4}}
+{"id":17,"type":"ArtifactRecorded","timestamp":"2026-04-15T08:35:50Z","data":{"stage":4,"artifact":"deploy-report.md"}}

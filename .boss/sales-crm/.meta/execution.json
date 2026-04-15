@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "0.2.0",
+  "feature": "sales-crm",
+  "createdAt": "2026-04-15T07:54:13Z",
+  "updatedAt": "2026-04-15T08:35:50Z",
+  "status": "completed",
+  "parameters": {
+    "skipUI": false,
+    "skipDeploy": false,
+    "quick": false,
+    "hitlLevel": "auto",
+    "roles": "full"
+  },
+  "stages": {
+    "1": {
+      "name": "planning",
+      "status": "completed",
+      "startTime": "2026-04-15T07:59:23Z",
+      "endTime": "2026-04-15T08:02:31Z",
+      "retryCount": 0,
+      "maxRetries": 2,
+      "failureReason": null,
+      "artifacts": [
+        "architecture.md",
+        "prd.md",
+        "ui-spec.md"
+      ],
+      "gateResults": {}
+    },
+    "2": {
+      "name": "review",
+      "status": "completed",
+      "startTime": "2026-04-15T08:02:31Z",
+      "endTime": "2026-04-15T08:05:30Z",
+      "retryCount": 0,
+      "maxRetries": 2,
+      "failureReason": null,
+      "artifacts": [
+        "tasks.md",
+        "tech-review.md"
+      ],
+      "gateResults": {}
+    },
+    "3": {
+      "name": "development",
+      "status": "completed",
+      "startTime": "2026-04-15T08:05:30Z",
+      "endTime": "2026-04-15T08:35:39Z",
+      "retryCount": 0,
+      "maxRetries": 2,
+      "failureReason": null,
+      "artifacts": [
+        "code",
+        "qa-report.md"
+      ],
+      "gateResults": {}
+    },
+    "4": {
+      "name": "deployment",
+      "status": "completed",
+      "startTime": "2026-04-15T08:35:39Z",
+      "endTime": "2026-04-15T08:35:50Z",
+      "retryCount": 0,
+      "maxRetries": 2,
+      "failureReason": null,
+      "artifacts": [
+        "deploy-report.md"
+      ],
+      "gateResults": {}
+    }
+  },
+  "qualityGates": {
+    "gate0": {
+      "status": "completed",
+      "passed": true,
+      "checks": [
+        "\u001b[0;34m[GATE0]\u001b[0m Gate 0: 代码质量检查",
+        "\u001b[0;34m[GATE0]\u001b[0m ========================",
+        "\u001b[0;34m[GATE0]\u001b[0m 跳过 TypeScript 检查（未检测到 tsconfig.json）",
+        "\u001b[0;34m[GATE0]\u001b[0m 跳过 Lint 检查（未检测到 Lint 配置）",
+        "[",
+        "  {",
+        "    \"name\": \"typescript-compile\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：无 tsconfig.json\"",
+        "  },",
+        "  {",
+        "    \"name\": \"lint\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：无 Lint 配置\"",
+        "  },",
+        "  {",
+        "    \"name\": \"dependency-audit\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：无 package.json\"",
+        "  }",
+        "]"
+      ],
+      "executedAt": "2026-04-15T08:36:28Z"
+    },
+    "gate1": {
+      "status": "completed",
+      "passed": true,
+      "checks": [
+        "\u001b[0;34m[GATE1]\u001b[0m Gate 1: 测试门禁",
+        "\u001b[0;34m[GATE1]\u001b[0m ========================",
+        "\u001b[0;34m[GATE1]\u001b[0m 未检测到测试框架，跳过测试门禁",
+        "[",
+        "  {",
+        "    \"name\": \"unit-tests\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：未检测到测试框架\"",
+        "  },",
+        "  {",
+        "    \"name\": \"coverage\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：未检测到测试框架\"",
+        "  },",
+        "  {",
+        "    \"name\": \"e2e-tests\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：未检测到测试框架\"",
+        "  }",
+        "]"
+      ],
+      "executedAt": "2026-04-15T08:36:28Z"
+    },
+    "gate2": {
+      "status": "completed",
+      "passed": true,
+      "checks": [
+        "\u001b[0;34m[GATE2]\u001b[0m Gate 2: 性能门禁",
+        "\u001b[0;34m[GATE2]\u001b[0m ========================",
+        "\u001b[0;34m[GATE2]\u001b[0m 非 Web 前端项目，跳过 Lighthouse 检查",
+        "\u001b[0;34m[GATE2]\u001b[0m 未检测到 API 框架，跳过 API P99 检查",
+        "[",
+        "  {",
+        "    \"name\": \"lighthouse\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：非 Web 前端项目\"",
+        "  },",
+        "  {",
+        "    \"name\": \"api-p99\",",
+        "    \"passed\": true,",
+        "    \"detail\": \"跳过：无 API 框架\"",
+        "  }",
+        "]"
+      ],
+      "executedAt": "2026-04-15T08:36:28Z"
+    }
+  },
+  "metrics": {
+    "totalDuration": null,
+    "stageTimings": {},
+    "gatePassRate": 100.00,
+    "retryTotal": 0
+  },
+  "plugins": [],
+  "humanInterventions": [],
+  "revisionRequests": [],
+  "feedbackLoops": {
+    "maxRounds": 2,
+    "currentRound": 0
+  }
+}

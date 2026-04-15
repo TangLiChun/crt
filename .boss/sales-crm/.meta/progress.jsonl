@@ -1,0 +1,8 @@
+{"timestamp":"2026-04-15T07:59:23Z","type":"stage-start","data":{"stage":1}}
+{"timestamp":"2026-04-15T08:02:31Z","type":"stage-start","data":{"stage":2}}
+{"timestamp":"2026-04-15T08:02:31Z","type":"stage-complete","data":{"stage":1}}
+{"timestamp":"2026-04-15T08:05:30Z","type":"stage-complete","data":{"stage":2}}
+{"timestamp":"2026-04-15T08:05:30Z","type":"stage-start","data":{"stage":3}}
+{"timestamp":"2026-04-15T08:35:39Z","type":"stage-complete","data":{"stage":3}}
+{"timestamp":"2026-04-15T08:35:39Z","type":"stage-start","data":{"stage":4}}
+{"timestamp":"2026-04-15T08:35:50Z","type":"stage-complete","data":{"stage":4}}
