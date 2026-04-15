@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Core;
 
 use PDO;
+use PDOException;
 use RuntimeException;
 
 final class Database
@@ -26,7 +27,13 @@ final class Database
         $dbDir = dirname($dbPath);
 
         if (!is_dir($dbDir)) {
-            mkdir($dbDir, 0777, true);
+            if (!mkdir($dbDir, 0777, true) && !is_dir($dbDir)) {
+                throw new RuntimeException(sprintf('数据库目录创建失败: %s', $dbDir));
+            }
+        }
+
+        if (!is_writable($dbDir)) {
+            throw new RuntimeException(sprintf('数据库目录不可写: %s', $dbDir));
         }
 
         $isNew = !file_exists($dbPath);
@@ -54,7 +61,18 @@ final class Database
             return $this->pdo;
         }
 
-        $this->pdo = new PDO('sqlite:' . $this->path());
+        $dbPath = $this->path();
+        $dbDir = dirname($dbPath);
+
+        try {
+            $this->pdo = new PDO('sqlite:' . $dbPath);
+        } catch (PDOException $exception) {
+            throw new RuntimeException(
+                sprintf('无法打开 SQLite 数据库文件: %s（目录: %s）', $dbPath, $dbDir),
+                previous: $exception
+            );
+        }
+
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $this->applyPragmas($this->pdo);
